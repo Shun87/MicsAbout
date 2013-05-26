@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>id</key>
+		<string>1</string>
+		<key>name</key>
+		<string>個性字體設計 專業版</string>
+		<key>appIcon</key>
+		<string>FontDesigner</string>
+		<key>description</key>
+		<string>自定義字體</string>
+		<key>url</key>
+		<string>itms://itunes.apple.com/us/app/font-design-pro-custom-font/id645489866?mt=8</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>2</string>
+		<key>name</key>
+		<string>短信群發</string>
+		<key>appIcon</key>
+		<string>SMS2Group</string>
+		<key>description</key>
+		<string>快速群發短信和郵件</string>
+		<key>url</key>
+		<string>itms://itunes.apple.com/us/app/sms-to-group-group-sms-email/id638194098?mt=8</string>
+	</dict>
+</array>
+</plist>
