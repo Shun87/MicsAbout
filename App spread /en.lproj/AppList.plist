@@ -4,19 +4,19 @@
 <array>
 	<dict>
 		<key>id</key>
-		<string>1</string>
+		<string>2</string>
 		<key>name</key>
-		<string>Font Designer Pro</string>
+		<string>Font Designer</string>
 		<key>appIcon</key>
 		<string>FontDesigner</string>
 		<key>description</key>
 		<string>Custom font design</string>
 		<key>url</key>
-		<string>itms://itunes.apple.com/us/app/font-design-pro-custom-font/id645489866?mt=8</string>
+		<string>itms://itunes.apple.com/us/app/font-Design-custom-font-designer-unicode-symbol-emoji/id648963730?mt=8</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<string>2</string>
+		<string>4</string>
 		<key>name</key>
 		<string>SMS2Group</string>
 		<key>appIcon</key>
@@ -25,6 +25,30 @@
 		<string>Fast group sms and mail</string>
 		<key>url</key>
 		<string>itms://itunes.apple.com/us/app/sms-to-group-group-sms-email/id638194098?mt=8</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>3</string>
+		<key>name</key>
+		<string>Tiny Diary</string>
+		<key>appIcon</key>
+		<string>TinyDiaryFree</string>
+		<key>description</key>
+		<string>Daily diary/Thoughts/Journal</string>
+		<key>url</key>
+		<string>itms://itunes.apple.com/us/app/Tiny-Diary-Journal-Daily-Thoughts-Notes/id658337057?mt=8</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>1</string>
+		<key>name</key>
+		<string>Color Emoji Free</string>
+		<key>appIcon</key>
+		<string>ColorEmojiFree</string>
+		<key>description</key>
+		<string>Color Emoji, 500+Unicode Symbols</string>
+		<key>url</key>
+		<string>itms://itunes.apple.com/us/app/color-emoji-unicode-symbol-character-text)/id657401562?mt=8</string>
 	</dict>
 </array>
 </plist>

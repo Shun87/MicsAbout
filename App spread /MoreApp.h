@@ -14,7 +14,9 @@
     UIImage *icon;
     NSString *description;
     NSString *url;
+    NSInteger appID;
 }
+@property (nonatomic, assign)NSInteger appID;
 @property (nonatomic, copy)NSString *url;
 @property (nonatomic, copy)NSString *name;
 @property (nonatomic, copy)NSString *description;
