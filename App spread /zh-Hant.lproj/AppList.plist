@@ -6,13 +6,13 @@
 		<key>id</key>
 		<string>2</string>
 		<key>name</key>
-		<string>個性字體設計</string>
+		<string>字體預覽</string>
 		<key>appIcon</key>
 		<string>FontDesigner</string>
 		<key>description</key>
-		<string>自定義字體</string>
+		<string>字體預覽</string>
 		<key>url</key>
-		<string>itms://itunes.apple.com/us/app/font-Design-custom-font-designer-unicode-symbol-emoji/id648963730?mt=8</string>
+		<string>itms://itunes.apple.com/us/app/id648963730?mt=8</string>
 	</dict>
 	<dict>
 		<key>id</key>
@@ -28,19 +28,19 @@
 	</dict>
 	<dict>
 		<key>id</key>
-		<string>3</string>
+		<string>1</string>
 		<key>name</key>
-		<string>微日記</string>
+		<string>生活筆記</string>
 		<key>appIcon</key>
 		<string>TinyDiaryFree</string>
 		<key>description</key>
 		<string>日記/迴憶/旅行日記</string>
 		<key>url</key>
-		<string>itms://itunes.apple.com/us/app/Tiny-Diary-Journal-Daily-Thoughts-Notes/id658337057?mt=8</string>
+		<string>itms://itunes.apple.com/us/app/id654461373?mt=8</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<string>1</string>
+		<string>3</string>
 		<key>name</key>
 		<string>錶情符號</string>
 		<key>appIcon</key>
@@ -48,7 +48,31 @@
 		<key>description</key>
 		<string>綵色錶情，500＋的unicode符號</string>
 		<key>url</key>
-		<string>itms://itunes.apple.com/us/app/color-emoji-unicode-symbol-character-text)/id657401562?mt=8</string>
+		<string>itms://itunes.apple.com/us/app/id658329345?mt=8</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>5</string>
+		<key>name</key>
+		<string>字體設計Pro</string>
+		<key>appIcon</key>
+		<string>FontDesignerPro</string>
+		<key>description</key>
+		<string>Custom font design</string>
+		<key>url</key>
+		<string>itms://itunes.apple.com/us/app/id645489866?mt=8</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>6</string>
+		<key>name</key>
+		<string>符號鍵盤</string>
+		<key>appIcon</key>
+		<string>Characters</string>
+		<key>description</key>
+		<string>500＋的符號，自定義符號鍵盤</string>
+		<key>url</key>
+		<string>itms://itunes.apple.com/us/app/id662711641?mt=8</string>
 	</dict>
 </array>
 </plist>
