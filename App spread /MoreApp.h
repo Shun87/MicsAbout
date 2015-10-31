@@ -20,7 +20,7 @@
 @property (nonatomic, copy)NSString *url;
 @property (nonatomic, copy)NSString *name;
 @property (nonatomic, copy)NSString *description;
-@property (nonatomic, retain)UIImage *icon;
+@property (nonatomic, strong)UIImage *icon;
 @end
 
 @interface MoreApp : NSObject

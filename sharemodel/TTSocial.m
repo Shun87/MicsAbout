@@ -40,9 +40,9 @@
                 // [slcomposeViewController addImage:nil];
                 slcomposeViewController.completionHandler = ^(SLComposeViewControllerResult result)
                 {
-                    [viewController dismissModalViewControllerAnimated:YES];
+                    [viewController dismissViewControllerAnimated:YES completion:nil];
                 };
-                [viewController presentModalViewController:slcomposeViewController animated:YES];
+                [viewController presentViewController:slcomposeViewController animated:YES completion:nil];
             }
             
         }
@@ -55,7 +55,7 @@
     }
     else
     {
-        UIAlertView *osAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:NSLocalizedString(@"Device not support", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles: nil];
+        UIAlertView *osAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:NSLocalizedString(@"Device not support", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"ok", nil) otherButtonTitles: nil];
         [osAlert show];
         [osAlert release];
     }
@@ -84,14 +84,14 @@
         }
         else
         {
-            UIAlertView *loginAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"No facebook notice", nil) message:NSLocalizedString(@"No facebook account", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"Cancel", nil) otherButtonTitles:NSLocalizedString(@"OK", nil), nil];
+            UIAlertView *loginAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"No facebook notice", nil) message:NSLocalizedString(@"No facebook account", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"Cancel", nil) otherButtonTitles:NSLocalizedString(@"ok", nil), nil];
             [loginAlert show];
             [loginAlert release];
         }
     }
     else
     {
-        UIAlertView *osAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:NSLocalizedString(@"Device not support", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles: nil];
+        UIAlertView *osAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:NSLocalizedString(@"Device not support", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"ok", nil) otherButtonTitles: nil];
         [osAlert show];
         [osAlert release];
     }
@@ -117,14 +117,14 @@
         }
         else
         {
-            UIAlertView *loginAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"No twitter notice", nil) message:NSLocalizedString(@"No twitter account", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"Cancel", nil) otherButtonTitles:NSLocalizedString(@"OK", nil), nil];
+            UIAlertView *loginAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"No twitter notice", nil) message:NSLocalizedString(@"No twitter account", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"Cancel", nil) otherButtonTitles:NSLocalizedString(@"ok", nil), nil];
             [loginAlert show];
             [loginAlert release];
         }
     }
     else
     {
-        UIAlertView *osAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:NSLocalizedString(@"Device not support", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles: nil];
+        UIAlertView *osAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:NSLocalizedString(@"Device not support", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"ok", nil) otherButtonTitles: nil];
         [osAlert show];
         [osAlert release];
     }
@@ -159,12 +159,12 @@
                [picker setMessageBody:body isHTML:NO]; 
             }
             
-            [viewController presentModalViewController:picker animated:YES];
+            [viewController presentViewController:picker animated:YES completion:nil];
             [picker release];
 		}
 		else
         {
-            UIAlertView *osAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:NSLocalizedString(@"Device not support", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles: nil];
+            UIAlertView *osAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:NSLocalizedString(@"Device not support", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"ok", nil) otherButtonTitles: nil];
             [osAlert show];
             [osAlert release];
 		}
@@ -283,6 +283,63 @@
     {
 		[self showWarning: @"Device not configured to send mail."];
 	}
+}
+
+-(void)showMailPicker:(NSString *)text
+                   to:(NSArray *)toRecipients imagePath:(NSString *)path
+{
+	// The MFMailComposeViewController class is only available in iPhone OS 3.0 or later.
+	// So, we must verify the existence of the above class and provide a workaround for devices running
+	// earlier versions of the iPhone OS.
+	// We display an email composition interface if MFMailComposeViewController exists and the device
+	// can send emails.	Display feedback message, otherwise.
+	Class mailClass = (NSClassFromString(@"MFMailComposeViewController"));
+    
+	if (mailClass != nil)
+    {
+        //[self displayMailComposerSheet];
+		// We must always check whether the current device is configured for sending emails
+		if ([mailClass canSendMail])
+        {
+			[self displayMailComposerSheets:text to:toRecipients imagePath:path];
+		}
+		else
+        {
+			[self showWarning:NSLocalizedString(@"No mail account", nil)];
+		}
+	}
+	else
+    {
+		[self showWarning: @"Device not configured to send mail."];
+	}
+}
+
+-(void)displayMailComposerSheets:(NSString *)text  to:(NSArray *)toRecipients  imagePath:(NSString *)path
+{
+	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+	picker.mailComposeDelegate = self;
+	
+    if ([toRecipients count] > 0)
+    {
+        [picker setToRecipients:toRecipients];
+    }
+	
+	if (path != nil)
+    {
+        NSData *gifData = [NSData dataWithContentsOfFile: path];
+        NSString *name = [path lastPathComponent];
+        [picker addAttachmentData:gifData mimeType:@"image/gif" fileName:name];
+    }
+    
+	// Fill out the email body text
+    if (text != nil)
+    {
+        [picker setMessageBody:text isHTML:NO];
+    }
+    
+	
+	[viewController presentViewController:picker animated:YES completion:nil];
+	[picker release];
 }
 
 // Displays an SMS composition interface inside the application.

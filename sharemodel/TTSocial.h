@@ -24,8 +24,11 @@ MFMessageComposeViewControllerDelegate, UINavigationControllerDelegate>
 - (void)sendEmail:(NSString *)title body:(NSString *)body recipient:(NSString *)address;
 
 - (void)showSMSPicker:(NSString *)text phones:(NSArray *)recipientArray;
+-(void)showMailPicker:(NSString *)text
+                   to:(NSArray *)toRecipients imagePath:(NSString *)path;
 
 - (void)showFaceBook:(NSString *)text;
 - (void)showTwitter:(NSString *)text;
 - (void)showSina:(NSString *)text;
+
 @end

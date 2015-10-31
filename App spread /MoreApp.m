@@ -12,14 +12,6 @@
 @implementation AppDesc
 @synthesize icon, name, description, url, appID;
 
-- (void)dealloc
-{
-    [icon release];
-    [name release];
-    [description release];
-    [url release];
-    [super dealloc];
-}
 @end
 
 @implementation MoreApp
@@ -35,6 +27,7 @@
         AppDesc *app  = [[AppDesc alloc] init];
         app.name = [dic objectForKey:@"name"];
         app.description = [dic objectForKey:@"description"];
+        NSLog(@"%@",[dic objectForKey:@"appIcon"]);
         app.icon = [UIImage imageNamed:[dic objectForKey:@"appIcon"]];
         app.url = [dic objectForKey:@"url"];
         app.appID = [[dic objectForKey:@"id"] intValue];
@@ -43,7 +36,6 @@
             // 如果是软件自己就不要加进来了
             [array addObject:app];
         }
-        
     }
     
     [array sortUsingComparator: ^NSComparisonResult(id obj1, id obj2){
